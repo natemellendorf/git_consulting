@@ -1,7 +1,8 @@
 ## This is an example header
 
-**bold**
-__italic__
+**bold**  
+
+_italic_
 
 ```
 Testing
