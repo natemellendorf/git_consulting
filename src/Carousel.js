@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
-import Offcanvas from './Offcanvas'
+import Banner from './Banner'
 
-class App extends Component {
+class Carousel extends Component {
 
   state = {
     posts: [],
@@ -10,11 +10,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Offcanvas />
-      </div>
+        <Banner />
     );
   }
 }
 
-export default App
+export default Carousel
