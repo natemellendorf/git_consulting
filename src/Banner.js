@@ -23,7 +23,7 @@ const PanelTitle = (props) => {
     var match = data.match(/Title:(.*)/)[1]
 
     return (
-        <h5>{match}</h5>
+        <h1>{match}</h1>
     )
 }
 
@@ -45,10 +45,11 @@ const PanelContent = (props) => {
 
     const regex = /#[A-Za-z]+/g;
     const found = data.match(regex);
+    const newstring = found.toString().replaceAll(',','  ')
 
     return (
         <p>
-            <pre>{found}</pre>
+            <b>{newstring}</b>
         </p>
     )
 }
@@ -67,7 +68,7 @@ const Panels = (props) => {
             return (
 
                 <div class={act}>
-                    <img src={img} class="d-block w-100 h-100"></img>
+                    <img src={img} class="w-100 h-100"></img>
                     <div class="carousel-caption d-none d-md-block">
                         <PanelTitle download_url={'/posts/' + file.name} />
                         <PanelContent download_url={'/posts/' + file.name} />

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
-import Offcanvas from './Offcanvas'
+import Hooks from './Hooks'
 
-class App extends Component {
+class Stories extends Component {
 
   state = {
     posts: [],
@@ -11,10 +11,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Offcanvas />
+        <Hooks />
       </div>
     );
   }
 }
 
-export default App
+export default Stories

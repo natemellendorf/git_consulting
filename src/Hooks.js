@@ -1,6 +1,5 @@
 import React from "react";
 import useFetch from "react-fetch-hook";
-import logo from './logo.svg';
 import ReactMarkdown from "react-markdown";
 
 const Content = (props) => {
