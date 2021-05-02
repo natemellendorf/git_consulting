@@ -26,7 +26,7 @@ const Loop = (props) => {
                 <div class="card-body bg-dark text-white">
                     <h5 class="card-title">{file.name.replace('.md', '')}</h5>
                     <p class="card-text">
-                        <Content download_url={file.download_url} />
+                        <Content download_url={'/posts/' + file.name} />
                     </p>
                     <p class="card-text"><small class="text-muted">Commit: {file.sha}</small></p>
                 </div>
@@ -38,7 +38,7 @@ const Loop = (props) => {
 }
 
 export default function Hooks() {
-    const { isLoading, error, data } = useFetch("https://api.github.com/repos/natemellendorf/git_consulting/contents/public/posts");
+    const { isLoading, error, data } = useFetch("https://api.github.com/repos/natemellendorf/git_consulting/contents/public/posts?ref=feature/development");
     if (isLoading) return "Loading...";
     if (error) return "Error!";
 
