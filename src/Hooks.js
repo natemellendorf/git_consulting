@@ -24,7 +24,7 @@ const Loop = (props) => {
             <div class="card mb-3 border-info bg-dark">
                 <img src={img} class="card-img-top"></img>
                 <div class="card-body bg-dark text-white">
-                    <h5 class="card-title">{file.name.replace('.md', '')}</h5>
+                    {/* <h5 class="card-title">{file.name.replace('.md', '')}</h5> */}
                     <p class="card-text">
                         <Content download_url={'/posts/' + file.name} />
                     </p>
