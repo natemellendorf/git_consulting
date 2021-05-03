@@ -3,11 +3,24 @@ import useFetch from "react-fetch-hook";
 import ReactMarkdown from "react-markdown";
 
 const Content = (props) => {
-    const { isLoading, data, error } = useFetch(props.download_url,{
-        formatter: (response) => response.text()}
-        );
-    if (isLoading) return "Loading...";
-    if (error) return "Error!";
+    const { isLoading, data, error } = useFetch(props.download_url, {
+        formatter: (response) => response.text()
+    }
+    );
+    if (isLoading) return (
+        <div class="text-center">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    );
+    if (error) return (
+        <div class="text-center">
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">ERROR!</span>
+            </div>
+        </div>
+    )
 
     return (
         <ReactMarkdown children={data} />
@@ -16,22 +29,23 @@ const Content = (props) => {
 
 const Loop = (props) => {
     const files = props.payload.map((file, index) => {
-        if (file.type === 'file' && file.name.includes(".md")){
-            var img = "posts/" + file.name.replace('.md','.jpg');
-        return (
+        if (file.type === 'file' && file.name.includes(".md")) {
+            var img = "posts/" + file.name.replace('.md', '.jpg');
+            return (
 
-            <div class="card mb-3 border-info bg-dark">
-                <img src={img} class="card-img-top"></img>
-                <div class="card-body bg-dark text-white">
-                    {/* <h5 class="card-title">{file.name.replace('.md', '')}</h5> */}
-                    <p class="card-text">
-                        <Content download_url={'/posts/' + file.name} />
-                    </p>
-                    <p class="card-text"><small class="text-muted">Commit: {file.sha}</small></p>
+                <div class="card mb-3 border-info bg-dark">
+                    <img src={img} class="card-img-top"></img>
+                    <div class="card-body bg-dark text-white">
+                        {/* <h5 class="card-title">{file.name.replace('.md', '')}</h5> */}
+                        <p class="card-text">
+                            <Content download_url={'/posts/' + file.name} />
+                        </p>
+                        <p class="card-text"><small class="text-muted">Commit: {file.sha}</small></p>
+                    </div>
                 </div>
-            </div>
-        
-        )}
+
+            )
+        }
     })
     return <p>{files}</p>
 }
