@@ -10,13 +10,17 @@ const PanelTitle = (props) => {
     }
     );
     if (isLoading) return (
-        <div class="spinner-border text-info" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="text-center">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
     );
     if (error) return (
-        <div class="spinner-grow text-danger" role="status">
-            <span class="visually-hidden">ERROR!</span>
+        <div class="text-center">
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">ERROR!</span>
+            </div>
         </div>
     )
 
@@ -45,12 +49,10 @@ const PanelContent = (props) => {
 
     const regex = /#[A-Za-z]+/g;
     const found = data.match(regex);
-    const newstring = found.toString().replaceAll(',','  ')
+    const newstring = found.toString().replaceAll(',', '  ')
 
     return (
-        <p>
-            <b>{newstring}</b>
-        </p>
+        <b>{newstring}</b>
     )
 }
 
@@ -62,21 +64,21 @@ const Panels = (props) => {
         };
     });
     const files = md.map((file, index) => {
-            var img = "posts/" + file.name.replace('.md', '.jpg');
-            var act = "carousel-item";
-            if (index === 0) { var act = "carousel-item active" };
-            return (
+        var img = "posts/" + file.name.replace('.md', '.jpg');
+        var act = "carousel-item h-100";
+        if (index === 0) { var act = "carousel-item h-100 active" };
+        return (
 
-                <div class={act}>
-                    <img src={img} class="w-100 h-100"></img>
-                    <div class="carousel-caption d-none d-md-block">
-                        <PanelTitle download_url={'/posts/' + file.name} />
-                        <PanelContent download_url={'/posts/' + file.name} />
-                    </div>
+            <div class={act}>
+                <img src={img} class="w-100"></img>
+                <div class="carousel-caption d-none d-md-block">
+                    <PanelTitle download_url={'/posts/' + file.name} />
+                    <PanelContent download_url={'/posts/' + file.name} />
                 </div>
+            </div>
 
-            )
-        }
+        )
+    }
     )
     return files
 }
@@ -95,13 +97,13 @@ export default function Banner() {
     )
 
     return (
-        <div id="carouselExampleCaptions" class="carousel slide mb-3" data-bs-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner h-100">
                 <Panels payload={data} />
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">

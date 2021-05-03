@@ -10,7 +10,7 @@ class Stories extends Component {
 
   render() {
     return (
-      <div>
+      <div id="stories">
         <Hooks />
       </div>
     );
