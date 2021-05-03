@@ -27,7 +27,7 @@ const PanelTitle = (props) => {
     var match = data.match(/Title:(.*)/)[1]
 
     return (
-        <h1>{match}</h1>
+        <h1 class="display-1">{match}</h1>
     )
 }
 
@@ -52,7 +52,7 @@ const PanelContent = (props) => {
     const newstring = found.toString().replaceAll(',', '  ')
 
     return (
-        <b>{newstring}</b>
+        <span class="badge rounded-pill bg-light text-dark">{newstring}</span>
     )
 }
 
@@ -70,7 +70,7 @@ const Panels = (props) => {
         return (
 
             <div class={act}>
-                <img src={img} class="w-100"></img>
+                <img src={img} class="w-100 fit_img"></img>
                 <div class="carousel-caption d-none d-md-block">
                     <PanelTitle download_url={'/posts/' + file.name} />
                     <PanelContent download_url={'/posts/' + file.name} />

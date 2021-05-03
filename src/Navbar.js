@@ -9,9 +9,9 @@ class Navbar extends Component {
     render() {
         return (
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="./logo192.png" alt="" width="24" height="24" class="d-inline-block align-text-top"></img>
-                        Git Consulting</a>
+                    <a class="navbar-brand " href="#">
+                        <img src="avatar.jpg" alt="" class="avatar"></img>
+                               Git Consulting</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -26,7 +26,7 @@ class Navbar extends Component {
                                     offset={-70}
                                     duration={500} >
 
-                                    <a class="nav-link active" href="#posts" role="button">Posts</a>
+                                    <a class="nav-link" href="#posts" role="button">Posts</a>
                                 </Link>
                             </li>
                             <li class="nav-item">
