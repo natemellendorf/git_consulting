@@ -9,4 +9,5 @@ This is another whitespace test.
 ---
 
 Title: Example
+Banner:example1.jpg
 #hashtag
