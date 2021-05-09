@@ -58,7 +58,7 @@ const Loop = (props) => {
     const files = props.payload.map((file, index) => {    
 
         return (
-            <div class="card mb-3 border-info bg-dark">
+            <div class="card mb-3 card-border bg-dark">
                 <GetImage download_url={file.default} />
                 <div class="card-body bg-dark text-white">
                     <p class="card-text">

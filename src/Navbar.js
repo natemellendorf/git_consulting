@@ -7,11 +7,11 @@ import logo from './logo.svg';
 
 class Navbar extends Component {
     render() {
-        return (
+        return (    
                 <div class="container-fluid">
-                    <a class="navbar-brand " href="#">
+                    <a class="navbar-brand banner-font" href="#">
                         <img src="avatar.jpg" alt="" class="avatar"></img>
-                               Git Consulting</a>
+                               Git.Consulting</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -35,13 +35,13 @@ class Navbar extends Component {
                         </ul>
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/natemellendorf"><i class="bi-github" role="img" aria-label="GitHub"></i></a>
+                                <a class="nav-link icon-color" href="https://github.com/natemellendorf"><i class="bi-github" role="img" aria-label="GitHub"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.linkedin.com/in/nathan-mellendorf/"><i class="bi-linkedin" role="img" aria-label="Linkedin"></i></a>
+                                <a class="nav-link icon-color" href="https://www.linkedin.com/in/nathan-mellendorf/"><i class="bi-linkedin" role="img" aria-label="Linkedin"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="mailto:nate.mellendorf@gmail.com"><i class="bi-google" role="img" aria-label="Gmail"></i></a>
+                                <a class="nav-link icon-color" href="mailto:nate.mellendorf@gmail.com"><i class="bi-google" role="img" aria-label="Gmail"></i></a>
                             </li>
                         </ul>
                     </div>

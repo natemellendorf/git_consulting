@@ -84,17 +84,17 @@ const Panels = (props) => {
 }
 
 export default function Banner() {
-    const { isLoading, error, data } = useFetch("https://api.github.com/repos/natemellendorf/git_consulting/contents/public/posts?ref=feature/development");
-    if (isLoading) return (
-        <div class="spinner-border text-info" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    );
-    if (error) return (
-        <div class="spinner-grow text-danger" role="status">
-            <span class="visually-hidden">ERROR!</span>
-        </div>
-    )
+    // const { isLoading, error, data } = useFetch("https://api.github.com/repos/natemellendorf/git_consulting/contents/public/posts?ref=feature/development");
+    // if (isLoading) return (
+    //     <div class="spinner-border text-info" role="status">
+    //         <span class="visually-hidden">Loading...</span>
+    //     </div>
+    // );
+    // if (error) return (
+    //     <div class="spinner-grow text-danger" role="status">
+    //         <span class="visually-hidden">ERROR!</span>
+    //     </div>
+    // )
 
     return (
         <img src="/posts/banner.jpg" class="img-fluid"></img>
