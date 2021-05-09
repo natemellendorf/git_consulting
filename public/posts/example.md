@@ -1,4 +1,8 @@
-## Hello, World!
+## Python 101 👋
+
+This is an example post.
+
+### Python Example
 
 ---
 
@@ -6,9 +10,5 @@
 test = "world"
 print(f"Hello, {test}!")
 ```
----
 
-Title: Hello, World! 👋  
-Banner:example.jpg  
-#hashtag  
-#helloworld  
+[//]: # (Banner:example.jpg )
