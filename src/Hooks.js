@@ -27,35 +27,60 @@ const Content = (props) => {
     )
 }
 
+const GetImage = (props) =>{
+    const { isLoading, data, error } = useFetch(props.download_url, {
+        formatter: (response) => response.text()
+    }
+    );
+    if (isLoading) return (
+        <div class="text-center">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    );
+    if (error) return (
+        <div class="text-center">
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">ERROR!</span>
+            </div>
+        </div>
+    )
+    const regex = /Banner:([A-Za-z0-9]+[.jpg]+)/;
+    const img = data.match(regex)
+    // console.log(img[1])
+    return (
+        <img src={'/posts/' + img[1]} class="card-img-top"></img>
+    )
+}
+
 const Loop = (props) => {
-    const files = props.payload.map((file, index) => {
-        if (file.type === 'file' && file.name.includes(".md")) {
-            var img = "posts/" + file.name.replace('.md', '.jpg');
-            return (
+    const files = props.payload.map((file, index) => {    
 
-                <div class="card mb-3 border-info bg-dark">
-                    <img src={img} class="card-img-top"></img>
-                    <div class="card-body bg-dark text-white">
-                        {/* <h5 class="card-title">{file.name.replace('.md', '')}</h5> */}
-                        <p class="card-text">
-                            <Content download_url={'/posts/' + file.name} />
-                        </p>
-                        <p class="card-text"><small class="text-muted">Commit: {file.sha}</small></p>
-                    </div>
+        return (
+            <div class="card mb-3 border-info bg-dark">
+                <GetImage download_url={file.default} />
+                <div class="card-body bg-dark text-white">
+                    <p class="card-text">
+                        <Content download_url={file.default} />
+                    </p>
+                    <p class="card-text"><small class="text-muted">Commit: ##</small></p>
                 </div>
+            </div>
 
-            )
-        }
+        )
     })
     return <p>{files}</p>
 }
 
 export default function Hooks() {
-    const { isLoading, error, data } = useFetch("https://api.github.com/repos/natemellendorf/git_consulting/contents/public/posts?ref=feature/development");
-    if (isLoading) return "Loading...";
-    if (error) return "Error!";
+    function importAll(r) {
+        return r.keys().map(r);
+    }
+
+    const posts = importAll(require.context('../public/posts/', false, /\.(md)$/))
 
     return (
-        <Loop payload={data} />
+        <Loop payload={posts} />
     );
 }
