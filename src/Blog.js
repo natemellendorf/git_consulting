@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
-import Hooks from './Hooks'
+import Posts from './Posts'
 
-class Stories extends Component {
+class Blog extends Component {
 
   state = {
     posts: [],
@@ -10,11 +10,11 @@ class Stories extends Component {
 
   render() {
     return (
-      <div id="stories">
-        <Hooks />
+      <div id="posts">
+        <Posts />
       </div>
     );
   }
 }
 
-export default Stories
+export default Blog
