@@ -1,8 +1,5 @@
 import React from "react";
 import useFetch from "react-fetch-hook";
-import logo from './logo.svg';
-import ReactMarkdown from "react-markdown";
-
 
 const PanelTitle = (props) => {
     const { isLoading, data, error } = useFetch(props.download_url, {
@@ -11,8 +8,16 @@ const PanelTitle = (props) => {
     );
     if (isLoading) return (
         <div class="text-center">
-            <div class="spinner-border text-info" role="status">
-                <span class="visually-hidden">Loading...</span>
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
             </div>
         </div>
     );
@@ -37,8 +42,18 @@ const PanelContent = (props) => {
     }
     );
     if (isLoading) return (
-        <div class="spinner-border text-info" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="text-center">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
         </div>
     );
     if (error) return (
