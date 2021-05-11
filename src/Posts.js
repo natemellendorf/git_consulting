@@ -62,7 +62,7 @@ const GetImage = (props) =>{
             </div>
         </div>
     )
-    const regex = /Banner:([A-Za-z0-9]+[.jpg]+)/;
+    const regex = /Banner:([A-Za-z0-9_-]+[.jpg]+)/;
     const img = data.match(regex)
     // console.log(img[1])
     return (
