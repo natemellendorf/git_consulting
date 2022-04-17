@@ -14,20 +14,20 @@ html, body {
 
 .banner-font {
   font-family: 'Bad Script', cursive;
-  color:rgb(255, 255, 128) !important;
+  color:rgb(245, 121, 59) !important;
 }
 
 .icon-color {
-  color:rgb(255, 255, 128) !important;
+  color:rgb(245, 121, 59) !important;
 }
 
 .banner-color-button {
-  border-color: rgb(255, 255, 128) !important;
-  color:rgb(255, 255, 128) !important;
+  border-color: rgb(245, 121, 59) !important;
+  color:rgb(245, 121, 59) !important;
 }
 
 .card-border {
-  border-color: rgb(255, 255, 128) !important;
+  border-color: rgb(245, 121, 59) !important;
 }
 
 .fit_img {

@@ -3,6 +3,12 @@ import './App.css'
 import Posts from './Posts'
 
 class Blog extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "React"
+    };
+  }
 
   state = {
     posts: [],

@@ -103,3 +103,23 @@
             transform: scale3D(0, 0, 1);
   } 
 }
+
+.logoOverlap {
+  position: absolute;
+  top:15%;
+  bottom: 25%;
+  right: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+}
+
+.banner {
+  width: 100%;
+  height: 90vh;
+}
+
+.bannerFooter {
+  width: 100%;
+  height: 10vh;
+}
